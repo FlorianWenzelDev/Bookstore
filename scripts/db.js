@@ -153,7 +153,7 @@ let books = [
       "name": "Liebe in Zeiten des Krieges",
       "author": "Emilia Rot",
       "likes": 1800,
-      "liked": true,
+      "liked": false,
       "price": 19.99,
       "publishedYear": 2016,
       "genre": "Romantik",
