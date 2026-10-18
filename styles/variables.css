@@ -2,9 +2,10 @@
 /* Rustic Charm */
 
 :root{
-    --placeholder1: #eb5e28;
-    --placeholder2: #252422;
-    --placeholder3: #403d39;
-    --placeholder4: #ccc5b9;
-    --placeholder5: #fffcf2;
+    --primary-accent-color: #eb5e28;
+    --primary-header-color: #252422;
+    --primary-content-font-color: #252422;
+    --primary-main-color: #403d39;
+    --secondary-main-color: #ccc5b9;
+    --primary-text-color: #fffcf2;
 }
