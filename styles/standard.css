@@ -8,6 +8,7 @@ a {
     text-decoration: none;
 }
 
-nav ul{
+ul{
     list-style-type: none;
+    padding-left: 0;
 }

@@ -1,13 +1,11 @@
-
 function getBookReviewHeader(bookIndex) {
-    return `        <section class="book-review">
+  return `        <section class="book-review">
             <h2>${books[0].name}</h2>
-            <img class="book-image" src="./assets/img/book.jpg" alt="Zwei Buchseiten die zu einem Herz geformt sind">`
+            <img class="book-image" src="./assets/img/book.jpg" alt="Zwei Buchseiten die zu einem Herz geformt sind">`;
 }
 
-
-function getBookReview(bookIndex) {
-    return `<section class="book-review">
+function getBookReview(bookIndex, comments) {
+  return `<section class="book-review">
             <h2>${books[bookIndex].name}</h2>
             <img class="book-image" src="./assets/img/book.jpg" alt="">
             <div class="book-status">
@@ -32,5 +30,24 @@ function getBookReview(bookIndex) {
                         <td>${books[bookIndex].genre}</td>
                     </tr>
                 </tbody>
-            </table>`
+            </table>
+            <div class="comment-section">
+                <h3>Kommentare:</h3>
+                <ul class="comments-wrapper">
+                    ${comments}
+                </ul>
+            </div>`;
+}
+
+//Comments als Variable übergeben und in das template einfügen in eine ul
+
+function getComment(author, comment) {
+  return `<li>
+    <article class="book-comment">
+      <span class="book-author">${author}</span>
+      <p class="book-comment-text">
+        ${comment}
+      </p>
+    </article>
+  </li>`;
 }

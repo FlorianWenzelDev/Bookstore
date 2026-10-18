@@ -93,13 +93,25 @@ main h1 {
 
 .comments-wrapper{
     display: flex;
+    flex-direction: column;
+    gap: 8px;
     height: 150px;
-    overflow: hidden;
+    overflow-y: auto;
+    scrollbar-gutter: stable;
 }
 
-.comments-wrapper p{
-    width: 50%;
+.book-comment {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 32px;
+    /* flex-wrap: wrap; */
 }
+
+.book-comment-text{
+    width: 55%;
+}
+
 
 .comment-creation{
     display: flex;

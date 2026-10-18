@@ -5,7 +5,8 @@ console.log(title);
 function renderBooksOnLoad() {
   let contentRef = document.getElementById("book-reviews");
   for (let index = 0; index < books.length; index++) {
-    contentRef.innerHTML += getBookReview(index);
+    let comments = renderComments(index);
+    contentRef.innerHTML += getBookReview(index, comments);
   }
   setLikeStatusOnLoad();
 }
@@ -30,4 +31,15 @@ function changeLikeCount(bookIndex) {
     likeCount -= 1;
   }
   likeCounts[bookIndex].innerText = likeCount;
+}
+
+function renderComments(index) {
+  let comments = books[index].comments;
+  let commentHtml = "";
+  for (let index = 0; index < comments.length; index++) {
+    let commentAuthor = comments[index].name;
+    let comment = comments[index].comment;
+    commentHtml +=  getComment(commentAuthor, comment);
+  }
+  return commentHtml;
 }
