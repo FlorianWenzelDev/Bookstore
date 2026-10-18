@@ -19,4 +19,15 @@ function setLikeStatusOnLoad() {
   }
 }
 
-
+function changeLikeCount(bookIndex) {
+  let likeCounts = document.getElementsByClassName("like-count");
+  let likeCount = parseInt(likeCounts[bookIndex].innerText);
+  let likeStatus = document.getElementsByClassName("liked");
+  likeCounts[bookIndex].innerText = "";
+  if (likeStatus[bookIndex].checked === true) {
+    likeCount += 1;
+  } else {
+    likeCount -= 1;
+  }
+  likeCounts[bookIndex].innerText = likeCount;
+}
