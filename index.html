@@ -14,7 +14,7 @@
     <script src="./script.js"></script>
 </head>
 
-<body onload="renderBooksOnLoad()">
+<body onload="renderBooksOnLoad(), saveToLocalStorage()">
 <!-- <body> -->
     <header>
         <div class="company-logo">
@@ -24,43 +24,6 @@
     </header>
     <main id="book-reviews">
         <h1>Check out our most recent books</h1>
-        <!-- <section class="book-review">
-            <h2>Title</h2>
-            <img class="book-image" src="./assets/img/book.jpg" alt="">
-            <div class="book-status">
-                <p class="price-tag">19.80€</p>
-                <div class="like-status">
-                    <p>975</p>
-                    <input type="checkbox" class="liked">
-                </div>
-            </div>
-            <table class="bookinformation">
-                <tbody>
-                    <tr scope="row">
-                        <th>Author:</th>
-                        <td>Content</td>
-                    </tr>
-                    <tr scope="row">
-                        <th>Erscheinungsjahr:</th>
-                        <td>Content</td>
-                    </tr>
-                    <tr scope="row">
-                        <th>Genre:</th>
-                        <td>Content</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="comment-section">
-                <h3>Kommentare:</h3>
-                <ul class="comments-wrapper">
-                </ul>
-                <div class="comment-creation">
-                    <input type="text" placeholder="Schreibe hier etwas...">
-                    <button onclick="setLikeStatusOnLoad(0)">Send</button>
-                </div>
-            </div>
-        </section> -->
-
     </main>
     <footer>
 

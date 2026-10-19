@@ -1,8 +1,3 @@
-function getBookReviewHeader(bookIndex) {
-  return `        <section class="book-review">
-            <h2>${books[0].name}</h2>
-            <img class="book-image" src="./assets/img/book.jpg" alt="Zwei Buchseiten die zu einem Herz geformt sind">`;
-}
 
 function getBookReview(bookIndex, comments) {
   return `<section class="book-review">
@@ -36,10 +31,13 @@ function getBookReview(bookIndex, comments) {
                 <ul class="comments-wrapper">
                     ${comments}
                 </ul>
-            </div>`;
+            </div>
+            <div class="comment-creation">
+                    <input class="new-comment" type="text" placeholder="Schreibe hier etwas...">
+                    <button onclick="addCommentToBookReview(${bookIndex})">Send</button>
+            </div>
+        </section>`;
 }
-
-//Comments als Variable übergeben und in das template einfügen in eine ul
 
 function getComment(author, comment) {
   return `<li>
