@@ -1,10 +1,12 @@
-let title = books[0].name;
 
-console.log(title);
+let data = {
+  "bookData": [],
+};
 
 function renderBooksOnLoad() {
+  getFromLocalStorage();
   let contentRef = document.getElementById("book-reviews");
-  for (let index = 0; index < books.length; index++) {
+  for (let index = 0; index < data.bookData.length; index++) {
     let comments = renderComments(index);
     contentRef.innerHTML += getBookReview(index, comments);
   }
@@ -13,8 +15,8 @@ function renderBooksOnLoad() {
 
 function setLikeStatusOnLoad() {
   let likeStatuses = document.getElementsByClassName("liked");
-  for (let index = 0; index < books.length; index++) {
-    if (books[index].liked === true) {
+  for (let index = 0; index < data.bookData.length; index++) {
+    if (data.bookData[index].liked === true) {
       likeStatuses[index].checked = true;
     }
   }
@@ -34,7 +36,7 @@ function changeLikeCount(bookIndex) {
 }
 
 function renderComments(index) {
-  let comments = books[index].comments;
+  let comments = data.bookData[index].comments;
   let commentHtml = "";
   for (let index = 0; index < comments.length; index++) {
     let commentAuthor = comments[index].name;
@@ -51,8 +53,25 @@ function addCommentToBookReview(bookIndex) {
   if (newComment !== "") {
     commentSections[bookIndex].innerHTML = "";
     comments[bookIndex].value = "";
-    books[bookIndex].comments.unshift({ name: "Flo", comment: `${newComment}` });
+    data.bookData[bookIndex].comments.unshift({ name: "Flo", comment: `${newComment}` });
     commentSections[bookIndex].innerHTML = renderComments(bookIndex);
   }
+  saveToLocalStorage();
+  
 }
 
+function saveToLocalStorage() {
+  localStorage.setItem("bookData", JSON.stringify(data.bookData));
+}
+
+function getFromLocalStorage() {
+  console.log(localStorage.getItem("bookData"));
+  
+  if(localStorage.getItem("bookData") === null){
+    localStorage.setItem("bookData", JSON.stringify(data.bookData));
+    data.bookData = books;
+  }
+  else{
+    data.bookData = JSON.parse(localStorage.getItem("bookData"));
+  }
+}

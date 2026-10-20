@@ -1,12 +1,12 @@
 
 function getBookReview(bookIndex, comments) {
   return `<section class="book-review">
-            <h2>${books[bookIndex].name}</h2>
+            <h2>${data.bookData[bookIndex].name}</h2>
             <img class="book-image" src="./assets/img/book.jpg" alt="">
             <div class="book-status">
-                <p class="price-tag">${books[bookIndex].price.toFixed(2)}€</p>
+                <p class="price-tag">${data.bookData[bookIndex].price.toFixed(2)}€</p>
                 <div class="like-status">
-                    <p class="like-count">${books[bookIndex].likes}</p>
+                    <p class="like-count">${data.bookData[bookIndex].likes}</p>
                     <input class="liked" onclick="changeLikeCount(${bookIndex})" type="checkbox">
                 </div>
             </div>
@@ -14,15 +14,15 @@ function getBookReview(bookIndex, comments) {
                 <tbody>
                     <tr scope="row">
                         <th>Author:</th>
-                        <td>${books[bookIndex].author}</td>
+                        <td>${data.bookData[bookIndex].author}</td>
                     </tr>
                     <tr scope="row">
                         <th>Erscheinungsjahr:</th>
-                        <td>${books[bookIndex].publishedYear}</td>
+                        <td>${data.bookData[bookIndex].publishedYear}</td>
                     </tr>
                     <tr scope="row">
                         <th>Genre:</th>
-                        <td>${books[bookIndex].genre}</td>
+                        <td>${data.bookData[bookIndex].genre}</td>
                     </tr>
                 </tbody>
             </table>
