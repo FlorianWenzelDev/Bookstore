@@ -56,12 +56,12 @@ main h1 {
     border-radius: 32px;
 }
 
-.bookinformation{
+.bookinformation {
     width: 80%;
     text-align: left;
 }
 
-.bookinformation th{
+.bookinformation th {
     width: 1%;
     white-space: nowrap;
     padding: 4px 8px 4px 0px;
@@ -74,7 +74,7 @@ main h1 {
     width: 80%;
 }
 
-.price-tag{
+.price-tag {
     color: var(--primary-accent-color);
 }
 
@@ -84,14 +84,14 @@ main h1 {
     gap: 16px;
 }
 
-.comment-section{
+.comment-section {
     display: flex;
     flex-direction: column;
     gap: 8px;
     width: 80%;
 }
 
-.comments-wrapper{
+.comments-wrapper {
     display: flex;
     flex-direction: column;
     gap: 8px;
@@ -107,46 +107,91 @@ main h1 {
     gap: 32px;
 }
 
-.book-comment-text{
+.book-comment-text {
     width: 55%;
 }
 
-
-.comment-creation{
+.comment-creation {
     display: flex;
     justify-content: space-between;
     width: 80%;
 }
 
-.comment-creation input{
+.comment-creation input {
     width: 75%;
 }
 
 /* Custom scrollbar */
 
 .comments-wrapper {
-  --sb-track-color: #403d39;
-  --sb-thumb-color: #eb5e28;
-  --sb-size: 8px;
+    --sb-track-color: #403d39;
+    --sb-thumb-color: #eb5e28;
+    --sb-size: 8px;
 }
 
 .comments-wrapper::-webkit-scrollbar {
-  width: var(--sb-size);
+    width: var(--sb-size);
 }
 
 .comments-wrapper::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
-  border-radius: 7px;
+    background: var(--sb-track-color);
+    border-radius: 7px;
 }
 
 .comments-wrapper::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  border-radius: 7px;
+    background: var(--sb-thumb-color);
+    border-radius: 7px;
 }
 
 @supports not selector(::-webkit-scrollbar) {
-  .comments-wrapper {
-      scrollbar-color: var(--sb-thumb-color)
-                     var(--sb-track-color);
-  }
+    .comments-wrapper {
+        scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+    }
+}
+
+/* Custom checkbox */
+
+.like-btn {
+    display: inline-flex;
+    position: relative;
+    border-radius: 12px;
+    width: 32px;
+    height: 32px;
+}
+
+.like-btn:hover{
+    background-color: var(--primary-main-color);
+}
+
+.liked {
+    position: absolute;
+    z-index: 2;
+    width: 33px;
+    height: 33px;
+    opacity: 0;
+}
+
+.book-liked,
+.book-not-liked {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: auto; 
+}
+
+.book-liked{
+    display: none;
+}
+
+.book-not-liked{
+    display: inline-block;
+}
+
+.liked:checked ~ .book-not-liked{
+    display: none;
+}
+
+.liked:checked ~ .book-liked{
+    display: inline-block;
 }

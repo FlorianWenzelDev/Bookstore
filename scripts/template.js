@@ -7,7 +7,11 @@ function getBookReview(bookIndex, comments) {
                 <p class="price-tag">${data.bookData[bookIndex].price.toFixed(2)}€</p>
                 <div class="like-status">
                     <p class="like-count">${data.bookData[bookIndex].likes}</p>
-                    <input class="liked" onclick="changeLikeCount(${bookIndex})" type="checkbox">
+                    <div class="like-btn">
+                        <input class="liked" onclick="changeLikeCount(${bookIndex})" type="checkbox">
+                        <img class="book-liked" src="./assets/icons/favorite_red.svg" alt="">
+                        <img class="book-not-liked" src="./assets/icons/favorite_white.svg" alt="">
+                    </div>
                 </div>
             </div>
             <table class="bookinformation">
